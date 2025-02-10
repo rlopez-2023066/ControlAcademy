@@ -8,10 +8,9 @@ import cors from 'cors' //Acceso al API
 import authRoutes from '../src/auth/auth.routes.js'
 import studentRouter from '../src/student/student.routes.js'
 import teacherRouter from '../src/teacher/teacher.routes.js'
-//Configuraciones de express
 const configs = (app)=> {
-    app.use(express.json()) //Aceptar y enviar datos en JSON
-    app.use(express.urlencoded({extended: false})) //No encriptar la URL
+    app.use(express.json()) 
+    app.use(express.urlencoded({extended: false})) 
     app.use(cors())
     app.use(helmet())
     app.use(morgan('dev'))
@@ -23,9 +22,8 @@ const routes = (app)=> {
     app.use(teacherRouter)
 }
 
-//Ejecutamos el servidor
 export const initServer = ()=> {
-    const app = express() //Instancia de express
+    const app = express() 
     try {
         configs(app)
         routes(app)

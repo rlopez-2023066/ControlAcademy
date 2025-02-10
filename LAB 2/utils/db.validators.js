@@ -1,5 +1,4 @@
 import User from '../src/user/user.model.js'
-                                    //Parametro  | token |
 export const existUsername = async(username, user) => {
 
     const alreadyUsername = await User.findOne({username})

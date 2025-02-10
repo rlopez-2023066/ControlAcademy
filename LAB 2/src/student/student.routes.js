@@ -1,12 +1,12 @@
-import { Router } from "express";
-import { assignCourse, viewCourses, editProfile, deleteProfile } from '../student/student.controller.js';
+import { Router } from "express" 
+import { assignCourse, viewCourses, editProfile, deleteProfile } from '../student/student.controller.js' 
+import {validateRole} from '../../middlewares/validateRole.js'
+import {validateJwt} from '../../middlewares/validate.jwt.js'
+const api = Router() 
 
-const api = Router();
+api.post('/student/:userId/courses/:courseId',validateJwt , validateRole(['STUDENT_ROLE']), assignCourse)   
+api.get('/students/:userId',validateJwt, validateRole(['STUDENT_ROLE']), viewCourses)   
+api.put('/students/profile/:userId',  validateJwt,validateRole(['STUDENT_ROLE']), editProfile)   
+api.delete('/students/profile/:userId', validateJwt,validateRole(['STUDENT_ROLE']), deleteProfile)   
 
-// Modificar ruta para incluir userId en la URL
-api.post('/student/:userId/courses/:courseId', assignCourse);  // Asignar curso
-api.get('/students/:userId', viewCourses);  // Ver cursos de un estudiante con userId
-api.put('/students/profile/:userId', editProfile);  // Editar perfil con userId
-api.delete('/students/profile/:userId', deleteProfile);  // Eliminar perfil con userId
-
-export default api;
+export default api 

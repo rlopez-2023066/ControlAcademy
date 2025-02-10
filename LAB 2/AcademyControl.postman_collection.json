@@ -1,0 +1,417 @@
+{
+	"info": {
+		"_postman_id": "f5b61e46-7516-493a-b4f5-31354cd27cc8",
+		"name": "AcademyControl",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37956967"
+	},
+	"item": [
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "addCourse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2E5NzZlOTMxYTA3ODZkMjhhMzc2MjIiLCJ1c2VybmFtZSI6ImFsb3BlejEiLCJuYW1lIjoiQWxmcmVkbyIsInJvbGUiOiJTVFVERU5UX1JPTEUiLCJpYXQiOjE3MzkxNjUyOTQsImV4cCI6MTczOTE3NjA5NH0.tnxRc6_53zrIAchNdxpiQ4eHaNznQ4MI8emBBUMGJLM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3000/student/67a976e931a0786d28a37622/courses/67a981b741c58da5152f2625",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"student",
+								"67a976e931a0786d28a37622",
+								"courses",
+								"67a981b741c58da5152f2625"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listCourses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/students/67a976e931a0786d28a37622",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"67a976e931a0786d28a37622"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Alfredo",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "López",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "alopez1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "alopez@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/students/profile/67a976e931a0786d28a37622",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"profile",
+								"67a976e931a0786d28a37622"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProfile",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/students/profile/67a97a81f11273f06e55b3f8",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"profile",
+								"67a97a81f11273f06e55b3f8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teacher",
+			"item": [
+				{
+					"name": "listCourses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2E5NzZjMjMxYTA3ODZkMjhhMzc2MWUiLCJ1c2VybmFtZSI6InJsb3BleiIsIm5hbWUiOiJSZW5lIiwicm9sZSI6IlRFQUNIRVJfUk9MRSIsImlhdCI6MTczOTE2NTExNiwiZXhwIjoxNzM5MTc1OTE2fQ.e5Dg1LUVf3Fvp5OjcF88gbIZNIVnAh-3hWYI8R-H9v0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3000/teacher/courses/67a993ac48c6aedb1721a033",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"teacher",
+								"courses",
+								"67a993ac48c6aedb1721a033"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCourse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2E5OTNhYzQ4YzZhZWRiMTcyMWEwMzMiLCJ1c2VybmFtZSI6Im1sb3BleiIsIm5hbWUiOiJNYXJnYXJpdGEgIiwicm9sZSI6IlRFQUNIRVJfUk9MRSIsImlhdCI6MTczOTE2Njc2NiwiZXhwIjoxNzM5MTc3NTY2fQ.zx8ojQIkUS0E7crSb63p8hxNOhzfxE3XwNKnQ8bVccs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/teacher/courses/67a993f448c6aedb1721a03b",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"teacher",
+								"courses",
+								"67a993f448c6aedb1721a03b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCourse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2E5OTNhYzQ4YzZhZWRiMTcyMWEwMzMiLCJ1c2VybmFtZSI6Im1sb3BleiIsIm5hbWUiOiJNYXJnYXJpdGEgIiwicm9sZSI6IlRFQUNIRVJfUk9MRSIsImlhdCI6MTczOTE2Njc2NiwiZXhwIjoxNzM5MTc3NTY2fQ.zx8ojQIkUS0E7crSb63p8hxNOhzfxE3XwNKnQ8bVccs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "mate",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Arte",
+									"type": "text"
+								},
+								{
+									"key": "area",
+									"value": "Emprendimiento",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/teacher/courses/67a993f648c6aedb1721a03f",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"teacher",
+								"courses",
+								"67a993f648c6aedb1721a03f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addCourse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2E5NzZjMjMxYTA3ODZkMjhhMzc2MWUiLCJ1c2VybmFtZSI6InJsb3BleiIsIm5hbWUiOiJSZW5lIiwicm9sZSI6IlRFQUNIRVJfUk9MRSIsImlhdCI6MTczOTE2NjMyMywiZXhwIjoxNzM5MTc3MTIzfQ.9IZrCJTCUs8Gn8WJi1j-iWURd-CTw6t8O8UaC9hc3Kw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2E5N2E4MWYxMTI3M2YwNmU1NWIzZjgiLCJ1c2VybmFtZSI6InBzYW5jaGV6IiwibmFtZSI6IlBlZHJvIiwicm9sZSI6IlRFQUNIRVJfUk9MRSIsImlhdCI6MTczOTE2MDIwNywiZXhwIjoxNzM5MTcxMDA3fQ.-N95RGTfQLTJTtmBYNa6m8tHXRNQ8N1yK5M2esAUt5o",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Matematicas",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Percución",
+									"type": "text"
+								},
+								{
+									"key": "area",
+									"value": "Conocimiento",
+									"type": "text"
+								},
+								{
+									"key": "teacher",
+									"value": "67a993ac48c6aedb1721a033",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/teacher/courses/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"teacher",
+								"courses",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Margarita ",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "Lopez",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "mlopez",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "mlopez@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Alfredo88917",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userLogin",
+							"value": "mlopez",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Alfredo88917",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,18 +1,19 @@
-import { Router } from 'express';
+import { Router } from 'express' 
 import {
     createCourse,
     editCourse,
     deleteCourse,
     viewCoursesByTeacher
-} from '../teacher/teacher.controller.js';
-import { validateJwt } from '../../middlewares/validate.jwt.js';
+} from '../teacher/teacher.controller.js' 
+import {validateJwt} from '../../middlewares/validate.jwt.js'
+import {validateRole} from '../../middlewares/validateRole.js'
 
-const api = Router();
 
-// Aplicar validateJwt a todas las rutas que requieren autenticación
-api.post('/teacher/courses', createCourse); // Crear curso
-api.put('/teacher/courses/:courseId', editCourse); // Editar curso
-api.delete('/teacher/courses/:courseId', deleteCourse); // Eliminar curso
-api.get('/teacher/courses/:teacherId', viewCoursesByTeacher); // Ver cursos
+const api = Router() 
 
-export default api;
+api.post('/teacher/courses', validateJwt , validateRole(['TEACHER_ROLE']), createCourse)  
+api.put('/teacher/courses/:courseId', validateJwt , validateRole(['TEACHER_ROLE']), editCourse)  
+api.delete('/teacher/courses/:courseId',validateJwt , validateRole(['TEACHER_ROLE']), deleteCourse)  
+api.get('/teacher/courses/:teacherId', validateJwt , validateRole(['TEACHER_ROLE']) ,viewCoursesByTeacher)  
+
+export default api 

@@ -6,7 +6,7 @@ import {
 
 const api = Router()
 
-api.post ('/register', register)
+api.post (  '/register',register)
 api.post('/login', login)
 
 export default api
